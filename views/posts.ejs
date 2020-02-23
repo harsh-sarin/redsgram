@@ -1,0 +1,27 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome to RedsGram</h1>
+            <p>Upload pics of the greatest club in the game</p>
+            <p><a class="btn btn-primary btn-large" href="/posts/new">Add new post</a></p>
+        </div>
+    </header>
+
+    <div class="row" style="display:flex; flex-wrap: wrap;">
+        <% posts.forEach(function(post){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="card mb-3">
+                <img class="card-img" src="<%= post.image %>" alt="">
+                <div class="caption">
+                    <h4><%= post.name %></h4>
+                </div>
+                <p><a href="/posts/<%= post._id %>" class="btn btn-primary">More Info</a></p>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+</div>
+<%- include("partials/footer") %>
