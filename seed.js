@@ -15,18 +15,18 @@ function addDataToDb() {
                 console.log("Error adding data");
             } else {
                 console.log("Successfully created post");
-                Comment.create({
-                    text: "Weee are the champioons",
-                    author: "SteveG"
-                }, function(err, comment){
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        post.comments.push(comment);
-                        post.save();
-                        console.log("Created new comment");
-                    }
-                });
+                // Comment.create({
+                //     text: "Weee are the champioons",
+                //     author: "SteveG"
+                // }, function(err, comment){
+                //     if (err) {
+                //         console.log(err);
+                //     } else {
+                //         post.comments.push(comment);
+                //         post.save();
+                //         console.log("Created new comment");
+                //     }
+                // });
             }
         });
     });
@@ -36,9 +36,9 @@ function removeComment() {
     Comment.remove({}, function(err){
         if (err) {
             console.log("Error cleaning database - cannot delete Comments.");
-        } else {
+        } /*else {
             addDataToDb();
-        }
+        }*/
     });
 }
 

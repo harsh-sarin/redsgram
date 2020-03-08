@@ -1,3 +1,7 @@
 .card .caption {
     padding: 1%;
 }
+
+.delete-form {
+    display: inline;
+}
